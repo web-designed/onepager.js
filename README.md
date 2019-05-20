@@ -5,7 +5,7 @@ Onepager.js will turn your markup into a onepage scrollable application with a d
 - [in-view.js](https://www.npmjs.com/package/in-view)
 - [smooth-scroll](https://www.npmjs.com/package/smooth-scroll)
 
-## Get Started
+## Install & usage
 
 from the terminal
 ```
@@ -19,5 +19,5 @@ const yourInstance = new OnePager()
 import './node_modules/onepager.js/dist/css/onepager.min.css' // or import it in your css
 ```
 
-##Full Documentation
-coming soon!
+## Full Documentation
+[HERE](https://onepagerjs.netlify.com/)
