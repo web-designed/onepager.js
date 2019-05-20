@@ -1,0 +1,62 @@
+@import './onepager.scss';
+@import './../../node_modules/highlight.js/styles/github.css';
+@import './../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+body {
+   font-family: 'Lato', sans-serif;
+   font-size: 1em;
+   line-height: 1.5em;
+}
+
+h1, h2, h3, h4 {
+   font-family: 'Oswald', sans-serif;
+   text-transform: uppercase;
+   margin-bottom: 1em;
+}
+
+.logo {
+   color: aqua;
+   font-family: 'Oswald', sans-serif;
+}
+
+.onepager-navigation-container {
+
+   .onepager-navigation {
+      li {
+         a {
+            font-family: 'Oswald', sans-serif;
+         }
+      }
+   }
+
+   &.active {
+      .onepager-navigation {
+         li {
+            a {
+               font-size: 2em; 
+               padding: 0.5em;             
+            }
+         }
+      }
+   }
+}
+
+code.hljs {
+   // white-space: initial;
+   // padding: 20px;
+}
+
+.desktop {
+   td {
+      width: 33.333%; 
+      word-break: break-word;
+   }
+}
+
+table {
+   background-color: #eee;
+}
+
+.onepager-header {
+   justify-content: inherit;
+}

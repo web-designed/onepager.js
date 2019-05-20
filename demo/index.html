@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900|Oswald:500" rel="stylesheet">
+		<link href="/assets/css/demo.min.css" rel="stylesheet">
+		<title>One Pager</title>
+	</head>
+	<body>
+      <header class="onepager-header">
+         <div class="col-md-2 logo-container d-flex align-items-center">
+            <a class="logo" href="#">1P</a>
+         </div>
+         <nav class="col-md-8 text-center onepager-navigation-container"></nav>
+         <div class="col-2 onepager-navigation-mobile-opener-container text-right"></div>
+      </header>
+		<div class="onepager-wrapper">
+         <div id="get-started" class="onepager-panel justify-content-center align-items-center" data-onepager-title="Get Started">
+            <div class="container animated growIn">
+               <h2>Get Started</h2>
+               <div class="row">
+                  <div class="col-md-8">
+                     <h5>Onepager.js will turn your markup into a onepage scrollable application with a dynamic navigation, API, callbacks and a mobile version.</h5>
+                  </div>
+               </div>
+               <pre>
+                  <code class="javascript">
+                     npm install onepager.js
+                     import OnePager from 'onepager.js'
+                     const yourInstance = new OnePager()
+                     import './node_modules/onepager.js/dist/css/onepager.min.css'
+                  </code>
+               </pre>
+            </div>
+         </div>
+         <div id="markup" class="onepager-panel justify-content-center align-items-center" data-onepager-title="Markup">
+            <div class="container animated growIn">
+               <h2>Markup</h2>
+               <div class="row">
+                  <div class="col-md-8">
+                     <h5>Feel free to start your onepage application with this markup</h5>
+                  </div>
+               </div>
+               <pre>
+                  <code class="xml">
+                     &lt;header class="onepager-header"&gt;                                             
+                        &lt;nav class="onepager-navigation-container"&gt;&lt;/nav&gt;                        
+                        &lt;div class="onepager-navigation-mobile-opener-container"&gt;&lt;/div&gt;                     
+                     &lt;/header&gt;                     
+                     &lt;main class="onepager-wrapper"&gt;                        
+                        &lt;div id="panel-1" class="onepager-panel" data-onepager-title="Panel 1"&gt;                           
+                           &lt;p&gt;Panel 1 content&lt;/p&gt;                        
+                        &lt;/div&gt;                        
+                        &lt;div id="panel-2" class="onepager-panel" data-onepager-title="Panel 2"&gt;                           
+                           &lt;p&gt;Panel 1 content&lt;/p&gt;                        
+                        &lt;/div&gt;                        
+                        &lt;div id="panel-3" class="onepager-panel" data-onepager-title="Panel 3"&gt;                           
+                           &lt;p&gt;Panel 1 content&lt;/p&gt;                        
+                        &lt;/div&gt;                     
+                     &lt;/main&gt;
+                  </code>
+               </pre>
+            </div>
+         </div>
+         <div id="options" class="onepager-panel justify-content-center align-items-center" data-onepager-title="Options">
+            <div class="container">
+               <h2>Options</h2>
+               <pre>
+                  <code class="javascript">
+                     const yourInstance = new OnePager({
+                        //selectors
+                        contentWrapper: '.onepager-wrapper',
+                        panelsSelector: '.onepager-panel',
+                        navContainer: '.onepager-navigation-container',
+                        navMobileOpenerContainer: '.onepager-navigation-mobile-opener-container',
+                        headerContainer: '.onepager-header',
+
+                        // css class for active elements
+                        activePanel: 'active',
+                        activeNavItem: 'active',
+
+                        //in view
+                        inViewOffset: {
+                           top: 100,
+                           bottom: 150,
+                        },
+
+                        // icons
+                        navMobileOpenerIcon: 'data:image/svg+xml;utf8,&lt;svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;&lt;path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"/&gt;&lt;/svg&gt;',
+                        navMobileCloseIcon: 'data:image/svg+xml;utf8,&lt;svg height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;&lt;path d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5 c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9 c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/&gt;&lt;/svg&gt;',
+
+                        // animation
+                        navItemAnimation: 'fadeInRight',
+                        animateContent: false,
+                        scrollSpeed: 600,
+
+                        // mobile
+                        mobileBreakpoint: 786,
+
+                        // callbacks
+                        onScrollStart: undefined,
+                        onScrollStop: undefined,
+                        onEnter: undefined,
+                     )}
+                  </code>
+               </pre>
+               <div class="table-responsive">
+                  <table style="width:100%" class="table">
+                     <thead>
+                        <tr>
+                           <td><h4 class="m-0">Option</h4></td>
+                           <td><h4 class="m-0">Description</h4></td>
+                           <td><h4 class="m-0">Default value</h4></td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><strong>contentWrapper</strong></td>
+                           <td>The content of the onepager.</td>
+                           <td>.onepager-wrapper</td>
+                        </tr>
+                        <tr>
+                           <td><strong>panelsSelector</strong></td>
+                           <td>Selects the onepager items/panels.</td>
+                           <td>.onepager-panel</td>
+                        </tr>
+                        <tr>
+                           <td><strong>navContainer</strong></td>
+                           <td>Onepager will inject the navigation into this container</td>
+                           <td>.onepager-navigation-container</td>
+                        </tr>
+                        <tr>
+                           <td><strong>navMobileOpenerContainer</strong></td>
+                           <td>Onepager will inject the navigation opener icon into this container</td>
+                           <td>.onepager-navigation-mobile-opener-container</td>
+                        </tr>
+                        <tr>
+                           <td><strong>headerContainer</strong></td>
+                           <td>This container will become the fixed header</td>
+                           <td>.onepager-header</td>
+                        </tr>
+                        <tr>
+                           <td><strong>activePanel</strong></td>
+                           <td>The active panel will be marked with this css class</td>
+                           <td>active</td>
+                        </tr>
+                        <tr>
+                           <td><strong>activeNavItem</strong></td>
+                           <td>The active navigation item will be marked with this css class</td>
+                           <td>active</td>
+                        </tr>
+                        <tr>
+                           <td><strong>inViewOffset</strong></td>
+                           <td>By default, onepager considers a panel active if it breaks any edge of the viewport by at least 150 pixels. (can be a positive or negative integer). Onepager uses in-view.js find more infos about offset <a href="https://github.com/camwiegert/in-view#inviewoffsetoffset">here</a></td>
+                           <td>{ top: 150, bottom: 150 }</td>
+                        </tr>
+                        <tr>
+                           <td><strong>navMobileOpenerIcon</strong></td>
+                           <td>
+                              <p>Onepager will inject this icon into the navMobileOpenerContainer Image like this &lt;img src="navMobileOpenerIcon" /&gt; it will open the navigation on the mobile version (onClick). </p>
+                              <p>If you are wondering why the default svg icon is not base64 encoded <a href="https://css-tricks.com/probably-dont-base64-svg/">https://css-tricks.com/probably-dont-base64-svg/</a></p>
+                           </td>
+                           <td>data:image/svg+xml;utf8,&lt;svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;&lt;path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"/&gt;&lt;/svg&gt;</td>
+                        </tr>
+                        <tr>
+                           <td><strong>navMobileCloseIcon</strong></td>
+                           <td>
+                              <p>Onepager will inject this icon into the navMobileInnerCloseButton Image like this &lt;img src="navMobileInnerCloseButton" /&gt; it will close the navigation on the mobile version (onClick).</p>
+                              <p>If you are wondering why the default svg icon is not base64 encoded <a href="https://css-tricks.com/probably-dont-base64-svg/">https://css-tricks.com/probably-dont-base64-svg/</a></p>
+                           <td>
+                              data:image/svg+xml;utf8,&lt;svg height='512px' id='Layer_1' style='enable-background:new 0 0 512 512;' version='1.1' viewBox='0 0 512 512' width='512px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'&gt;&lt;path d='M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5 c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9 c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z'/&gt;&lt;/svg&gt;
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><strong>navItemAnimation</strong></td>
+                           <td>After opening the mobile navigation the items will be animated in. You can choose between: fadeInRightShort, fadeInLeftShort, growIn, fadeInRight. Onepager uses <a href="http://jackonthe.net/css3animateit/examples/">http://jackonthe.net/css3animateit/examples/</a> if you need other animations add the additional css.</td>
+                           <td>fadeInRight</td>
+                        </tr>
+                        <tr>
+                           <td><strong>animateContent</strong></td>
+                           <td>Coming soon!</td>
+                           <td>false</td>
+                        </tr>
+                        <tr>
+                           <td><strong>scrollSpeed</strong></td>
+                           <td>The speed of the scroll event</td>
+                           <td>600</td>
+                        </tr>
+                        <tr>
+                           <td><strong>mobileBreakpoint</strong></td>
+                           <td>The breakpoint in "px" from which the mobile navigation will be activated</td>
+                           <td>786</td>
+                        </tr>
+                        <tr>
+                           <td><strong>onScrollStart</strong></td>
+                           <td>A callback function that will kick in before the scroll event fires after using a navigation item</td>
+                           <td>undefined</td>
+                        </tr>
+                        <tr>
+                           <td><strong>onScrollEnd</strong></td>
+                           <td>A callback function that will kick in after the scroll event ends after using a navigation item</td>
+                           <td>undefined</td>
+                        </tr>
+                        <tr>
+                           <td><strong>onEnter(panel)</strong></td>
+                           <td>A callback function that will kick in after a panel becomes visible. The function takes an argument "panel" and it's the object of the panel that is becoming visible</td>
+                           <td>undefined</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div> 
+            </div>
+         </div>
+         <div id="api" class="onepager-panel" data-onepager-title="API">
+            <div class="container">
+               <h2>API</h2>
+               <div class="table-responsive">
+                  <table style="width:100%" class="table">
+                     <thead>
+                        <tr>
+                           <td><h4 class="m-0">Method</h4></td>
+                           <td><h4 class="m-0">Description</h4></td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><strong>const myOnePager = new OnePager()</strong></td>
+                           <td>Instanciates your onepager</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.scrollTo('#unique-selector')</strong></td>
+                           <td>Scroll to a panel via unique selector</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.scrollToTopOfCurrentPanel()</strong></td>
+                           <td>Scroll to the top of the current panel</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.navMobileOpen()</strong></td>
+                           <td>On Viewports smaller than the defined mobile breakpoint opens the mobile navigation</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.navMobileClose()</strong></td>
+                           <td>On Viewports smaller than the defined mobile breakpoint closes the mobile navigation</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.navMobileIsOpened()</strong></td>
+                           <td>Check if the mobile navigation is opened (returns boolean)</td>
+                        </tr>
+                        <tr>
+                           <td><strong>myOnePager.currentPanelInView()</strong></td>
+                           <td>Returns the current panel object</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div> 
+            </div>
+         </div>
+         <div id="callbacks" class="onepager-panel justify-content-center align-items-center" data-onepager-title="Callbacks">
+            <div class="container animated growIn">
+               <h2>Callbacks</h2>
+               <pre>
+                  <code class="js">
+                     const onePager = new OnePager({
+                        onScrollStart: (event) => {
+                           console.log(event)
+                        },
+                        onScrollStop: (event) => {
+                           console.log(event)
+                        },
+                        onEnter: (el) => {
+                           console.log(el)
+                        }
+                     })
+                  </code>
+               </pre>
+            </div>
+         </div>
+         <div id="styling" class="onepager-panel justify-content-center align-items-center" data-onepager-title="Styling">
+            <div class="container animated growIn">
+               <h2>Styling</h2>
+               <div class="table-responsive">
+                  <table width="100%" class="table">
+                     <thead>
+                        <tr>
+                           <td><h4 class="m-0">Styles</h4></td>
+                           <td><h4 class="m-0">Comments</h4></td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><strong>Active Navigation Element</strong></td>
+                           <td>
+                              <p>override this if you need another active navigation item style</p>
+
+                              <pre><code>
+                                 .onepager-desktop .onepager-navigation-container li a.active {
+                                    color: aqua;
+                                 }
+                              </code></pre>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><strong>Header Styles</strong></td>
+                           <td>
+                              <p>the header (mobile & desktop) as default behaves in a flex manner. You will have to override this if you need a more complex navigation</p>
+                              <pre><code>
+                                 .onepager-header {
+                                    display: flex;
+                                    justify-content: space-between;
+                                 }
+                              </code></pre>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><strong>Panel Styles</strong></td>
+                           <td>
+                              <p>the panels (mobile & desktop) as default behave in a flex manner. The content will be vertically and horizontally centered. You will have to override this:</p>
+                              <pre><code>
+                                 .onepager-panel {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                 }
+                              </code></pre>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/demo.min.js"></script>      
+	</body>
+</html>
