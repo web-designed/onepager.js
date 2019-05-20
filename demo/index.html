@@ -287,6 +287,7 @@
                         <tr>
                            <td><h4 class="m-0">Styles</h4></td>
                            <td><h4 class="m-0">Comments</h4></td>
+                           <td><h4 class="m-0">Code</h4></td>
                         </tr>
                      </thead>
                      <tbody>
@@ -294,35 +295,49 @@
                            <td><strong>Active Navigation Element</strong></td>
                            <td>
                               <p>override this if you need another active navigation item style</p>
-
-                              <pre><code>
-                                 .onepager-desktop .onepager-navigation-container li a.active {
-                                    color: aqua;
-                                 }
-                              </code></pre>
                            </td>
+                           <td><pre><code>
+                              .onepager-desktop .onepager-navigation-container li a.active {
+                                 color: aqua;
+                              }
+                           </code></pre></td>
                         </tr>
                         <tr>
                            <td><strong>Header Styles</strong></td>
                            <td>
                               <p>the header (mobile & desktop) as default behaves in a flex manner. You will have to override this if you need a more complex navigation</p>
-                              <pre><code>
-                                 .onepager-header {
-                                    display: flex;
-                                    justify-content: space-between;
-                                 }
-                              </code></pre>
                            </td>
+                           <td><pre><code>
+                              .onepager-header {
+                                 display: flex;
+                                 justify-content: space-between;
+                              }
+                           </code></pre></td>
                         </tr>
                         <tr>
                            <td><strong>Panel Styles</strong></td>
                            <td>
                               <p>the panels (mobile & desktop) as default behave in a flex manner. The content will be vertically and horizontally centered. You will have to override this:</p>
+                           </td>
+                           <td>
                               <pre><code>
                                  .onepager-panel {
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
+                                 }
+                              </code></pre>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><strong>Web & Desktop</strong></td>
+                           <td>
+                              <p>Onepager follows the mobile first styling concept. A body class .desktop depending on the defined breakingpoint will be added to override the mobile styles</p>
+                           </td>
+                           <td>
+                              <pre><code>
+                                 body.desktop {
+                                    // add your desktop styles here
                                  }
                               </code></pre>
                            </td>

@@ -7,12 +7,12 @@ Onepager.js will turn your markup into a onepage scrollable application with a d
 
 ## Install & usage
 
-from the terminal
+### from the terminal
 ```
 npm install onepager.js
 ```
 
-in your js
+### in your js
 ```javascript
 import OnePager from 'onepager.js'
 const yourInstance = new OnePager()
