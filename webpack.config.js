@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env) => {
 
@@ -36,7 +37,7 @@ module.exports = (env) => {
                   {
                      loader: 'css-loader',
                      options: {
-                        minimize: true,
+                        // minimize: true,
                         sourceMap: true
                      }
                   }, 
@@ -64,10 +65,18 @@ module.exports = (env) => {
             filename: (getPath) => {
                console.log(getPath('[name]'))
                const fileName = getPath('[name]')
-               const targetPath = fileName === 'demo' ? `../../demo/assets/css/${fileName}.min.css` : `../css/${fileName}.min.css`
+               const targetPath = fileName === 'demo_' ? `../../demo/assets/css/${fileName}.min.css` : `../css/${fileName}.min.css`
                return targetPath
             },
             allChunks: true
+         }),
+         new OptimizeCssAssetsPlugin({
+            // assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+              preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true
          }),
          new FileManagerPlugin({
             onStart: {
@@ -81,6 +90,9 @@ module.exports = (env) => {
             onEnd: {
                copy: [
                   { source: './dist/js/demo.min.js', destination: './demo/assets/js/demo.min.js' }
+               ],
+               move: [
+                  { source: './dist/css/demo.min.css', destination: './demo/assets/css/demo.min.css' }
                ]
             }
          })
